@@ -11,23 +11,22 @@ root.resizable(False, False)
 def submit():
     try:
         # api key
-        # 69279444320403e83591dac64cdf5746
         # geocoding
         geocode = requests.get(
-            f'http://api.openweathermap.org/geo/1.0/zip?zip={zip_entry.get()},GB&appid=69279444320403e83591dac64cdf5746')
+            f'http://api.openweathermap.org/geo/1.0/zip?zip={zip_entry.get()},GB&appid=#ApiKeyHere')
         g_decode = json.loads(geocode.content)
         lat = g_decode['lat']
         lon = g_decode['lon']
 
         # Reverse geocoding API to get city name
         reverse_geocode = requests.get(
-            f'http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit=1&appid=69279444320403e83591dac64cdf5746')
+            f'http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit=1&appid=#ApikeyHere')
         rg_decode = json.loads(reverse_geocode.content)
         city_name = rg_decode[0]['name']
 
         # weather
         weather = requests.get(
-            f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=69279444320403e83591dac64cdf5746')
+            f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=#ApiKeyHere')
         w_decode = json.loads(weather.content)
         temp = w_decode['main']
 
