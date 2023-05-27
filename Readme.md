@@ -19,7 +19,7 @@ This is a simple weather application built with Python Tkinter that allows users
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/your-username/weather-app.git
+git clone https://github.com/azim-qadri/weather-app.git
 ```
 
 2. Navigate to the project directory:
